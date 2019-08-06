@@ -417,7 +417,7 @@ dialog h2 {
 }
 
 /* Fix the circle for containers on the right side */
-.right::after {
+.container:nth-child(even)::after {
 	left: -16px;
 }
 
