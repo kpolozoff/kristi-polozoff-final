@@ -66,6 +66,11 @@ h6 {
 	font-size: var(--size-1down);
 }
 
+.site-title {
+	color: var(--color-teal-dark);
+	font-size: var(--size-5up);
+}
+
 a {
 	color: var(--color-teal-mid);
 	font-size: var(--size-1up);
@@ -84,7 +89,8 @@ a:focus {
 	color: var(--color-teal-dark);
 }
 
-/*a:visited {
+/*  optional visited state
+a:visited {
 	background-color: var(--color-silver);
 }*/
 
@@ -254,12 +260,6 @@ Portfolio Cards
 		max-width: 100%;
 	}
 
-	/*.card-item img {
-		width: 10rem;
-		height: 10rem;
-		overflow: auto;
-	}*/
-
 	.card-item h3 {
 		font-size: var(--size-1up);
 	}
@@ -365,6 +365,22 @@ dialog h2 {
 	color: var(--color-text-secondary);
 }
 
+.sad-emoji:before {
+	content: "😫 ";
+}
+
+.happy-emoji:before {
+	content: "😄 ";
+}
+
+.inquisitive-emoji:before {
+	content: "🤔 ";
+}
+
+.content-emoji::before {
+	content: "😊 ";
+}
+
 .timeline p {
 	font-size: var(--size-1up);
 	text-shadow: none;
@@ -392,41 +408,12 @@ dialog h2 {
 }
 
 /* Place the container to the left */
-.left {
+.container:nth-child(odd) {
 	left: 0;
 }
-
 /* Place the container to the right */
-.right {
+.container:nth-child(even) {
 	left: 50%;
-}
-
-/* Add arrows to the left container (pointing right) */
-.left::before {
-	content: " ";
-	height: 0;
-	position: absolute;
-	top: 22px;
-	width: 0;
-	z-index: 1;
-	right: 30px;
-	border: medium solid white;
-	border-width: 10px 0 10px 10px;
-	border-color: transparent transparent transparent white;
-}
-
-/* Add arrows to the right container (pointing left) */
-.right::before {
-	content: " ";
-	height: 0;
-	position: absolute;
-	top: 22px;
-	width: 0;
-	z-index: 1;
-	left: 30px;
-	border: medium solid white;
-	border-width: 10px 10px 10px 0;
-	border-color: transparent white transparent transparent;
 }
 
 /* Fix the circle for containers on the right side */
@@ -566,14 +553,12 @@ dialog[open]::backdrop {
 	background-color: var(--color-teal-dark);
 	border-radius: .3em;
 	display: grid;
-	max-width: 20rem;
 	padding: .5rem;
 }
 .resume-content {
 	background-color: var(--color-teal-mid);
 	border-radius: .3em;
 	margin: .5rem;
-	max-width: 23rem;
 	padding: .5em;
 }
 
@@ -599,10 +584,11 @@ dialog[open]::backdrop {
 	font-size: var(--size-1up);
 }
 
-@media (min-width: 544px) {
+@media (min-width: 794px) {
 	.resume-grid {
 		justify-content: center;
-		max-width: 30rem;
+		grid-template-columns: repeat(2, 1fr);
+		max-width: 50rem;
 		padding: 1rem;
 	}
 
@@ -611,7 +597,7 @@ dialog[open]::backdrop {
 	}
 }
 
-@media (min-width: 794px) {
+@media (min-width: 916px) {
 	.resume-grid {
 		grid-gap: 1rem;
 		grid-template-columns: 16rem 17rem 16rem;
@@ -655,7 +641,6 @@ dialog[open]::backdrop {
 form {
 	background-color: var(--color-sand);
 	border-radius: .5rem;
-	max-width: 20rem;
 	padding: 1rem;
 }
 
